@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #airplane {
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: airplane-animation 4s linear infinite;
+        }
+
+        #trail {
+            fill: none;
+            stroke: blue;
+            stroke-width: 2;
+            stroke-opacity: 1;
+            animation: trail-animation 4s linear infinite;
+        }
+
+        @keyframes airplane-animation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(400px); }
+        }
+
+        @keyframes trail-animation {
+            0% { stroke-dasharray: 0, 1; }
+            100% { stroke-dasharray: 1, 1; }
+        }
+    </style>
+</head>
+<body>
+<svg width="500" height="500">
+    <path id="trail" d="M3 89.5C7.08504 93.0806 -0.383684 91.1662 7 93C19.1708 94.3458 31 92.7 47 89.5C54.5 88 143.5 71.5 231.81 17.11L206.74 0.519958C130.5 40.5 79 67 54.5 72C30 77 0 80 0 80V83L3 89.5Z" />
+    <g id="airplane">
+        <path d="M100 250 L150 250 L200 200 L100 200 Z" />
+    </g>
+</svg>
+</body>
+</html>
